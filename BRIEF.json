@@ -1,0 +1,40 @@
+{
+  "title": "Group Split Audit",
+  "user": "ML practitioners evaluating repeated observations from the same asset, person or experiment",
+  "problem": "A plausible validation score can hide shared entities, repeated samples or overlapping label windows between training and test sets.",
+  "capability": "Inspect saved fold IDs and report concrete group, fingerprint, inclusive time-window and class-coverage findings. Optionally generate KFold or GroupKFold splits with scikit-learn.",
+  "anchor": "scikit-learn/scikit-learn",
+  "pin": "scikit-learn 1.9.1, installed from the official Python package registry",
+  "alternatives": [
+    "scikit-learn/scikit-learn",
+    "cleanlab/cleanlab",
+    "deepchecks/deepchecks"
+  ],
+  "query": "machine learning stars:>10000 archived:false sort:stars; data leakage validation sort:stars",
+  "evidence": [
+    "https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-for-grouped-data",
+    "https://github.com/scikit-learn/scikit-learn/issues/32076",
+    "https://github.com/scikit-learn/scikit-learn/issues/13621"
+  ],
+  "demand": "Verified historical concern about grouped evaluation in upstream discussions; the cited issues are closed and existing GroupKFold/StratifiedGroupKFold are acknowledged. Demand for this particular file-based audit is inferred.",
+  "addition": "scikit-learn supplies splitters; Cleanlab investigates data/label quality; Deepchecks provides broader validation suites. This report ties declared fold membership to specific overlapping identifiers and windows without fitting a model. It does not replace their broader capabilities.",
+  "outcome": "The invented 18-row, six-asset example exposes group overlap in shuffled KFold. Changing generate to groupkfold keeps the supplied asset groups apart.",
+  "acceptance": [
+    "Actual scikit-learn GroupKFold output has no train/test group intersection.",
+    "Shuffled KFold exposes the synthetic repeated-asset overlap.",
+    "An interval-counting sweep agrees with a direct pairwise oracle, including touching endpoints.",
+    "Unknown, duplicate or empty fold IDs and reversed windows reject."
+  ],
+  "fields": "Each `rows` entry has unique string `id`, nonempty `group` and `label`; optional `fingerprint` is a supplied content identifier. Optional integer `start` and `end` are inclusive and use one declared time axis. Supply `folds` with train/test ID arrays, or `generate` as kfold/groupkfold with n_splits (default 3) and seed (default 0).",
+  "limits": "2..20000 rows, 1..20 supplied folds, 4 MiB JSON. Reports only observable declared identifiers/windows. Fingerprints are not computed or verified. All declared windows share a time axis; overlaps across unrelated groups can be legitimate and require review. No model training, score adjustment, embargo/purge implementation or proof that all leakage is absent. Missing training labels are review findings, not automatic evidence of leakage.",
+  "distinction": "Existing prompt-eval and climate-evidence-bench assess responses; notebook-state-check concerns execution state. This tool audits tabular train/test membership and declared leakage evidence.",
+  "maintenance": "Pinned scikit-learn with NumPy/SciPy transitive wheels; heavier install than the standard-library tools. Keep generated fold versions in the report and rerun group/window oracles before upgrading.",
+  "discovery": "A repeat-observation asset example, KFold versus GroupKFold evidence and searchable split-audit documentation.",
+  "rank": 2,
+  "identity": "group-split-audit",
+  "date": "2026-10-25",
+  "state": "VALIDATED",
+  "demand_status": "Inferred demand for this specific project; linked upstream evidence is qualified below.",
+  "no_performance_claim": true,
+  "no_upstream_affiliation": true
+}

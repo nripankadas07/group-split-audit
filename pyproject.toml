@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "group-split-audit"
+version = "0.1.0"
+description = "Group, duplicate and time-window leakage in cross-validation splits"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["scikit-learn==1.9.1"]
+[project.scripts]
+group-split-audit = "group_split_audit:main"
+[tool.setuptools]
+py-modules = ["group_split_audit"]

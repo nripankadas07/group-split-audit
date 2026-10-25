@@ -1,0 +1,115 @@
+{
+  "rows": [
+    {
+      "id": "row-0",
+      "group": "asset-0",
+      "label": "ok",
+      "fingerprint": "sample-0"
+    },
+    {
+      "id": "row-1",
+      "group": "asset-0",
+      "label": "fault",
+      "fingerprint": "sample-1"
+    },
+    {
+      "id": "row-2",
+      "group": "asset-0",
+      "label": "ok",
+      "fingerprint": "sample-2"
+    },
+    {
+      "id": "row-3",
+      "group": "asset-1",
+      "label": "fault",
+      "fingerprint": "sample-3"
+    },
+    {
+      "id": "row-4",
+      "group": "asset-1",
+      "label": "ok",
+      "fingerprint": "sample-4"
+    },
+    {
+      "id": "row-5",
+      "group": "asset-1",
+      "label": "fault",
+      "fingerprint": "sample-5"
+    },
+    {
+      "id": "row-6",
+      "group": "asset-2",
+      "label": "ok",
+      "fingerprint": "sample-6"
+    },
+    {
+      "id": "row-7",
+      "group": "asset-2",
+      "label": "fault",
+      "fingerprint": "sample-7"
+    },
+    {
+      "id": "row-8",
+      "group": "asset-2",
+      "label": "ok",
+      "fingerprint": "sample-8"
+    },
+    {
+      "id": "row-9",
+      "group": "asset-3",
+      "label": "fault",
+      "fingerprint": "sample-9"
+    },
+    {
+      "id": "row-10",
+      "group": "asset-3",
+      "label": "ok",
+      "fingerprint": "sample-10"
+    },
+    {
+      "id": "row-11",
+      "group": "asset-3",
+      "label": "fault",
+      "fingerprint": "sample-11"
+    },
+    {
+      "id": "row-12",
+      "group": "asset-4",
+      "label": "ok",
+      "fingerprint": "sample-12"
+    },
+    {
+      "id": "row-13",
+      "group": "asset-4",
+      "label": "fault",
+      "fingerprint": "sample-13"
+    },
+    {
+      "id": "row-14",
+      "group": "asset-4",
+      "label": "ok",
+      "fingerprint": "sample-14"
+    },
+    {
+      "id": "row-15",
+      "group": "asset-5",
+      "label": "fault",
+      "fingerprint": "sample-15"
+    },
+    {
+      "id": "row-16",
+      "group": "asset-5",
+      "label": "ok",
+      "fingerprint": "sample-16"
+    },
+    {
+      "id": "row-17",
+      "group": "asset-5",
+      "label": "fault",
+      "fingerprint": "sample-17"
+    }
+  ],
+  "generate": "kfold",
+  "n_splits": 3,
+  "seed": 17
+}

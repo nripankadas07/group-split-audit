@@ -1,0 +1,158 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "needs_review": true,
+      "overlapping_window_pairs": 0,
+      "same_row_ids": [],
+      "shared_fingerprints": [],
+      "shared_groups": [
+        "asset-0",
+        "asset-1",
+        "asset-3",
+        "asset-4"
+      ],
+      "test_labels": {
+        "fault": 4,
+        "ok": 2
+      },
+      "test_labels_absent_from_train": [],
+      "test_rows": 6,
+      "train_labels": {
+        "fault": 5,
+        "ok": 7
+      },
+      "train_rows": 12
+    },
+    {
+      "fold": 1,
+      "needs_review": true,
+      "overlapping_window_pairs": 0,
+      "same_row_ids": [],
+      "shared_fingerprints": [],
+      "shared_groups": [
+        "asset-0",
+        "asset-1",
+        "asset-2",
+        "asset-3",
+        "asset-4"
+      ],
+      "test_labels": {
+        "fault": 2,
+        "ok": 4
+      },
+      "test_labels_absent_from_train": [],
+      "test_rows": 6,
+      "train_labels": {
+        "fault": 7,
+        "ok": 5
+      },
+      "train_rows": 12
+    },
+    {
+      "fold": 2,
+      "needs_review": true,
+      "overlapping_window_pairs": 0,
+      "same_row_ids": [],
+      "shared_fingerprints": [],
+      "shared_groups": [
+        "asset-0",
+        "asset-2",
+        "asset-3"
+      ],
+      "test_labels": {
+        "fault": 3,
+        "ok": 3
+      },
+      "test_labels_absent_from_train": [],
+      "test_rows": 6,
+      "train_labels": {
+        "fault": 6,
+        "ok": 6
+      },
+      "train_rows": 12
+    }
+  ],
+  "generated": {
+    "folds": [
+      {
+        "test": [
+          "row-2",
+          "row-3",
+          "row-5",
+          "row-11",
+          "row-12",
+          "row-13"
+        ],
+        "train": [
+          "row-0",
+          "row-1",
+          "row-4",
+          "row-6",
+          "row-7",
+          "row-8",
+          "row-9",
+          "row-10",
+          "row-14",
+          "row-15",
+          "row-16",
+          "row-17"
+        ]
+      },
+      {
+        "test": [
+          "row-1",
+          "row-4",
+          "row-7",
+          "row-8",
+          "row-10",
+          "row-14"
+        ],
+        "train": [
+          "row-0",
+          "row-2",
+          "row-3",
+          "row-5",
+          "row-6",
+          "row-9",
+          "row-11",
+          "row-12",
+          "row-13",
+          "row-15",
+          "row-16",
+          "row-17"
+        ]
+      },
+      {
+        "test": [
+          "row-0",
+          "row-6",
+          "row-9",
+          "row-15",
+          "row-16",
+          "row-17"
+        ],
+        "train": [
+          "row-1",
+          "row-2",
+          "row-3",
+          "row-4",
+          "row-5",
+          "row-7",
+          "row-8",
+          "row-10",
+          "row-11",
+          "row-12",
+          "row-13",
+          "row-14"
+        ]
+      }
+    ],
+    "splitter": "kfold",
+    "version": "1.9.1"
+  },
+  "limits": "Observable identifiers and declared inclusive time windows only; no model training or proof that all leakage is absent.",
+  "needs_review": true,
+  "rows": 18,
+  "schema": "group-split-audit/v1"
+}

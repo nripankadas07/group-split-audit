@@ -1,0 +1,158 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cross-validation split review</title><style>body{font:16px/1.6 system-ui;background:#f3f6fa;color:#182438;max-width:1100px;margin:40px auto;padding:0 24px}header{border-bottom:3px solid #137a68;padding-bottom:24px}h1{font-size:2.25rem;line-height:1.15;max-width:800px}h2{margin-top:40px;font-size:1.2rem}.cards{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.card{background:white;padding:16px 22px;border:1px solid #d2dae5;border-radius:10px;min-width:140px}.card b{display:block;font-size:1.7rem;color:#0b6555}table{border-collapse:collapse;width:100%;background:white;margin-bottom:22px;display:block;overflow:auto}th,td{text-align:left;padding:12px;border-bottom:1px solid #d6deea;vertical-align:top}th{background:#e3eaf2}td{overflow-wrap:anywhere}input{font:inherit;padding:10px;width:min(90%,600px);border:1px solid #8593a6;border-radius:6px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:20px;border:1px solid #d2dae5}.status{font-weight:700;color:#0b6555}footer{margin-top:40px;color:#4a5b73}details{margin-top:30px}label{display:block}</style><header><p>LOCAL DIAGNOSTICS · SYNTHETIC EXAMPLE WHEN USING THE BUNDLED FIXTURE</p><h1>Cross-validation split review</h1><p>Review observable group, duplicate and time-window overlap before interpreting a validation score.</p><p class="status">Review findings</p></header><div class="cards"><div class="card">Observations<b>18</b></div><div class="card">Folds<b>3</b></div><div class="card">Folds to review<b>3</b></div></div><label>Filter evidence rows <input id="q" type="search" placeholder="Service, key, group, path or finding"></label><h2>Fold findings</h2><table><thead><tr><th>Fold</th><th>Train / test</th><th>Shared groups</th><th>Shared fingerprints</th><th>Window pairs</th><th>Unseen labels</th></tr></thead><tbody><tr><td>0</td><td>12 / 6</td><td>asset-0, asset-1, asset-3, asset-4</td><td>None</td><td>0</td><td>None</td></tr><tr><td>1</td><td>12 / 6</td><td>asset-0, asset-1, asset-2, asset-3, asset-4</td><td>None</td><td>0</td><td>None</td></tr><tr><td>2</td><td>12 / 6</td><td>asset-0, asset-2, asset-3</td><td>None</td><td>0</td><td>None</td></tr></tbody></table><details><summary>Complete JSON evidence</summary><pre>{
+  &quot;schema&quot;: &quot;group-split-audit/v1&quot;,
+  &quot;rows&quot;: 18,
+  &quot;folds&quot;: [
+    {
+      &quot;fold&quot;: 0,
+      &quot;train_rows&quot;: 12,
+      &quot;test_rows&quot;: 6,
+      &quot;same_row_ids&quot;: [],
+      &quot;shared_groups&quot;: [
+        &quot;asset-0&quot;,
+        &quot;asset-1&quot;,
+        &quot;asset-3&quot;,
+        &quot;asset-4&quot;
+      ],
+      &quot;shared_fingerprints&quot;: [],
+      &quot;overlapping_window_pairs&quot;: 0,
+      &quot;test_labels_absent_from_train&quot;: [],
+      &quot;train_labels&quot;: {
+        &quot;fault&quot;: 5,
+        &quot;ok&quot;: 7
+      },
+      &quot;test_labels&quot;: {
+        &quot;fault&quot;: 4,
+        &quot;ok&quot;: 2
+      },
+      &quot;needs_review&quot;: true
+    },
+    {
+      &quot;fold&quot;: 1,
+      &quot;train_rows&quot;: 12,
+      &quot;test_rows&quot;: 6,
+      &quot;same_row_ids&quot;: [],
+      &quot;shared_groups&quot;: [
+        &quot;asset-0&quot;,
+        &quot;asset-1&quot;,
+        &quot;asset-2&quot;,
+        &quot;asset-3&quot;,
+        &quot;asset-4&quot;
+      ],
+      &quot;shared_fingerprints&quot;: [],
+      &quot;overlapping_window_pairs&quot;: 0,
+      &quot;test_labels_absent_from_train&quot;: [],
+      &quot;train_labels&quot;: {
+        &quot;fault&quot;: 7,
+        &quot;ok&quot;: 5
+      },
+      &quot;test_labels&quot;: {
+        &quot;fault&quot;: 2,
+        &quot;ok&quot;: 4
+      },
+      &quot;needs_review&quot;: true
+    },
+    {
+      &quot;fold&quot;: 2,
+      &quot;train_rows&quot;: 12,
+      &quot;test_rows&quot;: 6,
+      &quot;same_row_ids&quot;: [],
+      &quot;shared_groups&quot;: [
+        &quot;asset-0&quot;,
+        &quot;asset-2&quot;,
+        &quot;asset-3&quot;
+      ],
+      &quot;shared_fingerprints&quot;: [],
+      &quot;overlapping_window_pairs&quot;: 0,
+      &quot;test_labels_absent_from_train&quot;: [],
+      &quot;train_labels&quot;: {
+        &quot;fault&quot;: 6,
+        &quot;ok&quot;: 6
+      },
+      &quot;test_labels&quot;: {
+        &quot;fault&quot;: 3,
+        &quot;ok&quot;: 3
+      },
+      &quot;needs_review&quot;: true
+    }
+  ],
+  &quot;generated&quot;: {
+    &quot;splitter&quot;: &quot;kfold&quot;,
+    &quot;version&quot;: &quot;1.9.1&quot;,
+    &quot;folds&quot;: [
+      {
+        &quot;train&quot;: [
+          &quot;row-0&quot;,
+          &quot;row-1&quot;,
+          &quot;row-4&quot;,
+          &quot;row-6&quot;,
+          &quot;row-7&quot;,
+          &quot;row-8&quot;,
+          &quot;row-9&quot;,
+          &quot;row-10&quot;,
+          &quot;row-14&quot;,
+          &quot;row-15&quot;,
+          &quot;row-16&quot;,
+          &quot;row-17&quot;
+        ],
+        &quot;test&quot;: [
+          &quot;row-2&quot;,
+          &quot;row-3&quot;,
+          &quot;row-5&quot;,
+          &quot;row-11&quot;,
+          &quot;row-12&quot;,
+          &quot;row-13&quot;
+        ]
+      },
+      {
+        &quot;train&quot;: [
+          &quot;row-0&quot;,
+          &quot;row-2&quot;,
+          &quot;row-3&quot;,
+          &quot;row-5&quot;,
+          &quot;row-6&quot;,
+          &quot;row-9&quot;,
+          &quot;row-11&quot;,
+          &quot;row-12&quot;,
+          &quot;row-13&quot;,
+          &quot;row-15&quot;,
+          &quot;row-16&quot;,
+          &quot;row-17&quot;
+        ],
+        &quot;test&quot;: [
+          &quot;row-1&quot;,
+          &quot;row-4&quot;,
+          &quot;row-7&quot;,
+          &quot;row-8&quot;,
+          &quot;row-10&quot;,
+          &quot;row-14&quot;
+        ]
+      },
+      {
+        &quot;train&quot;: [
+          &quot;row-1&quot;,
+          &quot;row-2&quot;,
+          &quot;row-3&quot;,
+          &quot;row-4&quot;,
+          &quot;row-5&quot;,
+          &quot;row-7&quot;,
+          &quot;row-8&quot;,
+          &quot;row-10&quot;,
+          &quot;row-11&quot;,
+          &quot;row-12&quot;,
+          &quot;row-13&quot;,
+          &quot;row-14&quot;
+        ],
+        &quot;test&quot;: [
+          &quot;row-0&quot;,
+          &quot;row-6&quot;,
+          &quot;row-9&quot;,
+          &quot;row-15&quot;,
+          &quot;row-16&quot;,
+          &quot;row-17&quot;
+        ]
+      }
+    ]
+  },
+  &quot;needs_review&quot;: true,
+  &quot;limits&quot;: &quot;Observable identifiers and declared inclusive time windows only; no model training or proof that all leakage is absent.&quot;
+}</pre></details><footer>Read the repository limitations before acting. These results describe supplied inputs; they do not certify a live system.</footer><script>document.querySelector("#q").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll("tbody tr").forEach(r=>r.hidden=!r.textContent.toLowerCase().includes(q))});</script></html>
